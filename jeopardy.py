@@ -4,6 +4,10 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # GLOBAL CONSTANTS FOR EASY ACCESS
+# file and folder names
+DATAFOLDER = "jeopardy_data"
+DATAFILE = "bible_trivia.json"
+ICONFOLDER = "icons"
 # the values the question takes (array [100, 200, ..., 500])
 QUESTIONVALUES = [str(i) for i in range(100,501,100)]
 
@@ -46,9 +50,9 @@ TITLE_MAIN_BUFFER = 10
 TOPSCOREBOARD_BUFFER = 2
 
 # Load the game data
-gamedata_folder = "jeopardy_data"
-gamedata_file = "bible_trivia.json" # for test code TODO parameterise this!
-icon_folder = "icons"
+gamedata_folder = DATAFOLDER
+gamedata_file = DATAFILE # for test code TODO parameterise this!
+icon_folder = ICONFOLDER
 
 # gets the file pointer to the json file containing the questions
 gamedata_fp = open(join(dirname(__file__), gamedata_folder, gamedata_file))
