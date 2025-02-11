@@ -1,0 +1,91 @@
+{
+    "title": "Bible Jeopardy",
+    "icon": "bible_jeopardy.png",
+    "titleimg": "bible_jeopardy.png",
+    "categories": {
+        "General Trivia": {
+            "questions": {
+                "100": "What is the name of the last book in the Bible?",
+                "200": "Which prophet got swallowed by a giant fish?",
+                "300": "How many books are there in the Bible?",
+                "400": "How many New Testament books consist of only one chapter?",
+                "500": "Who was renamed to 'Israel' in the Bible?"
+            },
+            "answers": {
+                "100": "Revelations",
+                "200": "Jonah",
+                "300": "66",
+                "400": "4\n(Philemon, 2 John, 3 John and Jude)",
+                "500": "Jacob"
+            }
+        },
+        "Galatians": {
+            "questions": {
+                "100": "Who wrote Galatians?",
+                "200": ["Which Old Testament figure does Paul reference in his letter to the Galatians:","<l>A. Elijah\nB. Abraham\nC. Enoch\nD. David"],
+                "300": "How many fruits of the Spirit are there?",
+                "400": "Which apostle did Paul rebuke in Antioch?",
+                "500": "What overarching issue was Paul addressing in the Galatian church?"
+            },
+            "answers": {
+                "100": "Paul",
+                "200": "B. Abraham",
+                "300": "9\n(love, joy, peace, patience, kindness, goodness, gentleness, faithfulness, self-control)",
+                "400": "Peter\n(also called Cephas)",
+                "500": "Being saved by faith vs being saved by following the law"
+            }
+        },
+        "Creation": {
+            "questions": {
+                "100": "On which day did God rest?",
+                "200": "How many days did it take for the creation to be done?",
+                "300": "In what/whose image did God create humans in?",
+                "400": "What did the snake tempt Adam and Eve to do?",
+                "500": "Which part of Adam was Eve created from?"
+            },
+            "answers": {
+                "100": "The seventh one\n(or Sunday or the Sabbath)",
+                "200": "6\n(the seventh was when God rested)",
+                "300": "His own image",
+                "400": "Eat from the tree of knowledge of good and evil",
+                "500": "His rib\n(or his side; the Hebrew word, 'tsela', can be translated as 'rib' or 'side')"
+            }
+        },
+        "Guess Who": {
+            "questions": {
+                "100": "Which disciple betrayed Jesus?",
+                "200": "Who was the first disciple that Jesus called?",
+                "300": "Which of the following was a king: Abraham, Peter, Melchizedek, Jonah?",
+                "400": "Who was Jacob's (the son of Issac, the son of Abraham) favourite son?",
+                "500": "Who was the first king of Israel?"
+            },
+            "answers": {
+                "100": "Judas Iscariot\n(note, there is another disciple who is also called Judas that isn't the same person)",
+                "200": "Simon Peter\n(or his brother Andrew as they were called at the same time)",
+                "300": "Melchizedek\n(see Genesis 14:18)",
+                "400": "Joseph",
+                "500": "King Saul\n(see 1 Samuel)"
+            }
+        },
+        "Charades": {
+            "questions": {
+                "100": "Charades Round!",
+                "200": "Charades Round!",
+                "300": "Charades Round!",
+                "400": "Charades Round!",
+                "500": "Charades Round!"
+            },
+            "answers": {
+                "100": "David and Goliath",
+                "200": "Jonah",
+                "300": "Jesus",
+                "400": "Moses",
+                "500": "Paul"
+            }
+        }
+    },
+    "final": {
+        "question": "How many psalms are there in the book of Psalms?",
+        "answer": "150"
+    }
+}
