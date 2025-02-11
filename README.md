@@ -1,6 +1,8 @@
 # jeopardy
 Basic display for a Jeopardy game
 
+Disclaimer: I do not own Jeopardy or have any affiliation with the show.
+
 How to use:
 1. Create game data (JSON file)
 1. Change the DATAFILE value (near the top of jeopardy.py) to the game data you want
@@ -9,7 +11,7 @@ How to use:
 
 Description:
 This is a basic display to use for a game of Jeopardy.
-I built this for use at a church youth ministry as I did not want to use a slideshow
+I built this to use at my church's youth ministry as I did not want to use a slideshow
 (since I did not want to have to manually edit values during the game).
 I've left space to add a second Jeopardy stage if I ever revisit this project,
 but I didn't make it because I didn't want the game to drag on too long.
