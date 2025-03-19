@@ -1,0 +1,123 @@
+{
+    "title": "Jeopardy",
+    "icon": "yagg.jpg",
+    "titleimg": "yagg.jpg",
+    "categories": {
+        "Global Brands": {
+            "questions": {
+                "100": ["What is this brand?","<i>=yas-gb100.png\\>{height=150}{width=150}"],
+                "200": ["What is this brand?","<i>=yas-gb200.png\\>{height=150}{width=150}"],
+                "300": ["What is this brand?","<i>=yas-gb300.png\\>{height=150}{width=150}"],
+                "400": ["What is this brand?","<i>=yas-gb400.png\\>{height=150}{width=150}"],
+                "500": ["What is this brand?","<i>=yas-gb500.png\\>{height=150}{width=150}"]
+            },
+            "answers": {
+                "100": "Lacoste",
+                "200": "Kellogg's",
+                "300": "Motorola",
+                "400": "Gucci",
+                "500": "Rolex"
+            }
+        },
+        "Food": {
+            "questions": {
+                "100": "Where does sugar come from?",
+                "200": "What is the meat of a deer called?",
+                "300": "Which country did bubble tea originate from?",
+                "400": "What is the white part of the inside of the egg called?",
+                "500": "What is the unofficial national fruit of Australia?"
+            },
+            "answers": {
+                "100": "Sugarcane",
+                "200": "Venison",
+                "300": "Taiwan",
+                "400": "Albumen",
+                "500": "Riberry"
+            }
+        },
+        "Sport": {
+            "questions": {
+                "100": "Which athlete has won the most Olympic medals?",
+                "200": "What is the national sport of Japan?",
+                "300": "Which country has won the most FIFA World Cups?",
+                "400": "In golf, what is the term given when a golfer sinks 3 strokes under par for an individual hole?",
+                "500": "What was Kobe Bryant named after?"
+            },
+            "answers": {
+                "100": "Michael Phelps",
+                "200": "Sumo wrestling",
+                "300": "Brazil",
+                "400": "Albatross",
+                "500": "Kobe beef"
+            }
+        },
+        "Nature": {
+            "questions": {
+                "100": "What was the name of the cyclone that hit the southern coast of Queensland?",
+                "200": "Which country in the world has the most pyramids?",
+                "300": "What is the world's largest gold producing country?",
+                "400": "How many states or territories in Australia observe daylight saving?",
+                "500": "Which one of the seven ancient wonders of the world is still standing today?"
+            },
+            "answers": {
+                "100": "Cyclone Alfred",
+                "200": "Sudan",
+                "300": "China",
+                "400": "5",
+                "500": "Great Pyramid of Giza"
+            }
+        },
+        "Movies": {
+            "questions": {
+                "100": "How many films are there currently in the 'Mission Impossible' franchise",
+                "200": "Who was the first actor that played James Bond in film?",
+                "300": "What was the highest grossing film of 2024?",
+                "400": "Which actor plays Buzz Lightyear in the Toy Story film franchise?",
+                "500": "In what year was the original 'Jurassic Park' film released?"
+            },
+            "answers": {
+                "100": "7",
+                "200": "Sean Connery",
+                "300": "Inside Out 2",
+                "400": "Tim Allen",
+                "500": "1993"
+            }
+        },
+        "History": {
+            "questions": {
+                "100": "What was the title of the famous speech by Martin Luther King Jr in 1963?",
+                "200": "In what ocean did the Titanic sink?",
+                "300": "Who was the first Prime Minister of Australia?",
+                "400": "Who invented the telephone?",
+                "500": "In what year did James Cook first land in Australia?"
+            },
+            "answers": {
+                "100": "I Have A Dream",
+                "200": "Atlantic Ocean",
+                "300": "Edmund Barton",
+                "400": "Alexander Graham Bell",
+                "500": "1770"
+            }
+        },
+        "Grace Church": {
+            "questions": {
+                "100": "What 4-week sermon series are we currently going through in March 2025?",
+                "200": "How many years ago was Grace Church founded?",
+                "300": "What is the full address of Grace Church?",
+                "400": "To the nearest hundred, how many subscribers does the official 'Grace Church of Christ' YouTube channel have?",
+                "500": "What is the vision of Grace Church?"
+            },
+            "answers": {
+                "100": "Fear",
+                "200": "43",
+                "300": "21 Koomba Road Wantirna 3152",
+                "400": "500",
+                "500": "To be a disciple-making church"
+            }
+        }
+    },
+    "final": {
+        "question": "How long is Australia's longest road, National Highway 1, in km?",
+        "answer": "14,500"
+    }
+}

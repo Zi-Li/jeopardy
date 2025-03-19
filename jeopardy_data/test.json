@@ -1,0 +1,123 @@
+{
+    "title": "Jeopardy - TEST FILE",
+    "icon": "yagg.jpg",
+    "titleimg": "yagg.jpg",
+    "categories": {
+        "Global Brands": {
+            "questions": {
+                "100": ["Question with image","<i>=testimage.jpg\\>{height=150}{width=150}"],
+                "200": ["Question with image","<i>=testimage.jpg\\>{height=150}{width=150}"],
+                "300": ["Question with image","<i>=testimage.jpg\\>{height=150}{width=150}"],
+                "400": ["Question with image","<i>=testimage.jpg\\>{height=150}{width=150}"],
+                "500": ["Question with image","<i>=testimage.jpg\\>{height=150}{width=150}"]
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "Food": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "Sport": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "Nature": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "Movies": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "History": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        },
+        "Grace Church": {
+            "questions": {
+                "100": "Question?",
+                "200": "Question?",
+                "300": "Question?",
+                "400": "Question?",
+                "500": "Question?"
+            },
+            "answers": {
+                "100": "A",
+                "200": "A",
+                "300": "A",
+                "400": "A",
+                "500": "A"
+            }
+        }
+    },
+    "final": {
+        "question": "Question?",
+        "answer": "Answer"
+    }
+}

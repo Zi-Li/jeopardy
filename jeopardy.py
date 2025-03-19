@@ -2,12 +2,14 @@ from json import load
 from os.path import join, dirname
 from tkinter import *
 from PIL import Image, ImageTk
+from sys import argv
 
 # GLOBAL CONSTANTS FOR EASY ACCESS
 # file and folder names
 DATAFOLDER = "jeopardy_data"
-DATAFILE = "bible_trivia.json"
+DATAFILE = "ya_social.json"
 ICONFOLDER = "icons"
+IMAGEFOLDER = "images"
 # the values the question takes (array [100, 200, ..., 500])
 QUESTIONVALUES = [str(i) for i in range(100,501,100)]
 
@@ -53,6 +55,10 @@ TOPSCOREBOARD_BUFFER = 2
 gamedata_folder = DATAFOLDER
 gamedata_file = DATAFILE # for test code TODO parameterise this!
 icon_folder = ICONFOLDER
+image_folder = IMAGEFOLDER
+
+if (len(argv) == 2): # TODO do a more complete parameterisation with options
+    gamedata_file = argv[1]
 
 # gets the file pointer to the json file containing the questions
 gamedata_fp = open(join(dirname(__file__), gamedata_folder, gamedata_file))
@@ -71,6 +77,12 @@ HAVEIMG = False
 TITLEIMG = None
 TITLEIMAGE_HEIGHT = 65
 TITLEIMAGE_WIDTH = 60
+DEFAULTIMAGE_HEIGHT = 100
+DEFAULTIMAGE_WIDTH = 100
+IMAGEMAX_HEIGHT = 175
+IMAGEMAX_WIDTH = 175
+
+IMAGEBUFFER = []
 
 # get icon
 try:
@@ -496,6 +508,7 @@ class MainGame():
     # creates the disaply for a question page
     def question_gen(self, tk:Tk, cat: str, val: str, activator: Button):
         def question_display(): 
+            imgbufferreset = []
             self.disable_mainbutton(activator) # disables the button that was use to go to this question
             self.remaining[cat][val] = False
             self.hide_mainboard() # hides the main board
@@ -513,7 +526,7 @@ class MainGame():
             # handling different formats
             # if question prompt is just a string, then just place it in
             if type(question_text) == str:
-                Label(text_static, text=question_text, font=("Arial", 24), justify=CENTER, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=10, ipady=10)
+                Label(text_static, text=question_text, font=("Arial", 24), justify=CENTER, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=5, ipady=5)
             elif type(question_text) == list:
                 # otherwise, if it is a list
                 for qtxt in question_text:
@@ -521,10 +534,41 @@ class MainGame():
                     if qtxt[0] == "<" and qtxt[2] == ">":
                         # interpret <l> as a 'list' - left justify instead of center so that elements are inline with each other
                         if qtxt[1] == "l":
-                            Label(text_static, text=qtxt[3:], font=("Arial", 24), justify=LEFT, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=10, ipady=10)
-                        # TODO <i> or <p> tag to indicate picture/image
+                            Label(text_static, text=qtxt[3:], font=("Arial", 24), justify=LEFT, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=5, ipady=5)
+                        # <i>=filename\\> tag to indicate picture/image
+                        if qtxt[1] == "i":
+                            # qtxt[3] should be '='
+                            # then we need to find the index of '\\>'
+                            # note, for now we assume it is only a single image with nothing else
+                            filenamepart = qtxt[3:][(qtxt[3:].find("=")+1):qtxt[3:].find("\\>")]
+                            image_width = DEFAULTIMAGE_WIDTH
+                            image_height = DEFAULTIMAGE_HEIGHT
+                            if (qtxt[3:].find("{height=") != -1):
+                                heightstart = qtxt[3:].find("{height=") + len("{height=") + 3
+                                heightend = qtxt[heightstart:].find("}") + heightstart
+                                try:
+                                    image_height = min(int(qtxt[heightstart:heightend]),IMAGEMAX_HEIGHT)
+                                except:
+                                    pass
+                            
+                            if (qtxt[3:].find("{width=") != -1):
+                                widthstart = qtxt[3:].find("{width=") + len("{width=") + 3
+                                widthend = qtxt[widthstart:].find("}") + widthstart
+                                try:
+                                    image_width = min(int(qtxt[widthstart:widthend]),IMAGEMAX_WIDTH)
+                                except:
+                                    pass
+                            try:
+                                image_path = join(dirname(__file__), image_folder, filenamepart)
+                                image = ImageTk.PhotoImage(Image.open(image_path).resize((image_width,image_height)))
+                                IMAGEBUFFER.append(image)
+                                imgbufferreset.append(image)
+                                Label(text_static, image=image, justify=CENTER, compound="center", text='').pack(side=TOP, ipadx=5, ipady=5)
+                            except Exception as e:
+                                print(e)
+                                Label(text_static, text=filenamepart, font=("Arial", 24, 'italic'), justify=CENTER, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=5, ipady=5)
                     else: # no tag, treat as string
-                        Label(text_static, text=qtxt, font=("Arial", 24), justify=CENTER, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=10, ipady=10)
+                        Label(text_static, text=qtxt, font=("Arial", 24), justify=CENTER, wraplength=WRAPLENGTH_QA).pack(side=TOP, ipadx=5, ipady=5)
             # generate team point display
             pointframe = self.team_score_gen(questionboard_bot, rowoffset=1)
             pointframe.pack(side=BOTTOM, anchor=CENTER)
@@ -567,7 +611,11 @@ class MainGame():
                     self.show_mainboard()
                     questionboard_bot.destroy()
                     questionboard_top.destroy()
-                cont_button = Button(questionboard_bot, text="Continue", font=("Arial", 24, 'bold'), command=cont_button_func).pack(side=TOP)
+                    for img in imgbufferreset:
+                        IMAGEBUFFER.remove(img)
+                print("making cont button")
+                cont_button = Button(questionboard_top, text="Continue", font=("Arial", 24, 'bold'), command=cont_button_func)
+                cont_button.pack(side=TOP)
                 create_buffer(questionboard_bot, CONT_SCORE_BUFFER).pack(side=TOP)
             ans_button.config(command=reveal_answer)
             ans_button.pack(side=TOP, anchor=CENTER, ipadx=10, ipady=10)
